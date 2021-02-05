@@ -543,6 +543,8 @@ func (h *langHandler) handle(ctx context.Context, conn *jsonrpc2.Conn, req *json
 		return h.handleInitialize(ctx, conn, req)
 	case "initialized":
 		return
+	case "exit":
+		return h.handleExit(ctx, conn, req)
 	case "shutdown":
 		return h.handleShutdown(ctx, conn, req)
 	case "textDocument/didOpen":
